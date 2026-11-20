@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Edric da Silva de Carvalho — Estudante de Engenharia da Computação (UniCEUB). Aberto a estágios em Engenharia da Computação, Eletrônica e Infraestrutura de Redes (Presencial, Híbrido ou Remoto — Qualquer Período).">
+  <meta name="author" content="Edric da Silva de Carvalho">
+  <meta name="keywords" content="Edric Carvalho, Engenharia da Computação, UniCEUB, Estágio TI, Eletrônica, Infraestrutura de Redes, CCNA, Dual-WAN, Raspberry Pi RP2040, Linux, Docker, C, Java, Python">
+  <title>Edric Carvalho | Engenharia da Computação, Eletrônica &amp; Redes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Scroll Reading Progress -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Subtle Technical Grid & Ambient Glow -->
+  <div class="tech-grid" aria-hidden="true"></div>
+  <div class="ambient ambient-1" aria-hidden="true"></div>
+  <div class="ambient ambient-2" aria-hidden="true"></div>
+
+  <!-- ═══ Navbar ═══ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Início">
+        <span class="logo-bracket">&lt;</span>Edric<span class="logo-accent">.dev</span><span class="logo-bracket"> /&gt;</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Navegação principal">
+        <a href="#about" data-i18n="nav.about">Sobre</a>
+        <a href="#highlights" data-i18n="nav.highlights">Diferenciais</a>
+        <a href="#skills" data-i18n="nav.skills">Competências</a>
+        <a href="#projects" data-i18n="nav.projects">Projetos</a>
+        <a href="#experience" data-i18n="nav.experience">Trajetória</a>
+        <a href="#contact" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-pill lang-toggle" id="lang-toggle" type="button" aria-label="Alternar idioma PT/EN" title="PT / EN">
+          <span class="lang-opt active" data-lang="pt">PT</span>
+          <span class="lang-sep">/</span>
+          <span class="lang-opt" data-lang="en">EN</span>
+        </button>
+
+        <button class="icon-pill theme-toggle" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+
+        <a href="assets/Curriculo_Edric_Carvalho.docx" download class="btn btn-sm btn-primary nav-cv-btn" id="nav-cv-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="nav.cv">Currículo</span>
+        </a>
+
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═══ Hero Section ═══ -->
+    <section class="hero" id="hero">
+      <canvas class="network-canvas" id="network-canvas" aria-hidden="true"></canvas>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span data-i18n="hero.status">Aberto a Estágios · Presencial, Híbrido ou Remoto · Qualquer Período</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="hero-greeting" data-i18n="hero.greeting">Olá, eu sou</span>
+            <span class="hero-name">Edric <span class="gradient-text">Carvalho</span></span>
+          </h1>
+
+          <div class="typing-line" aria-live="polite">
+            <span class="prompt-symbol">&gt;_</span>
+            <span class="typing-text" id="typing-text"></span>
+            <span class="typing-cursor" aria-hidden="true"></span>
+          </div>
+
+          <p class="hero-lead" data-i18n="hero.lead">
+            Estudante de <strong>Engenharia da Computação</strong> com perfil mão na massa, conectando
+            <strong>software, hardware, eletrônica e infraestrutura de redes</strong>. Comprometido em vestir a camisa,
+            aprender rápido, liderar com clareza e entregar resultados exemplares no prazo.
+          </p>
+
+          <div class="hero-tracks">
+            <span class="track-tag" data-i18n="hero.track1">Engenharia da Computação</span>
+            <span class="track-tag" data-i18n="hero.track2">Eletrônica &amp; Embarcados</span>
+            <span class="track-tag" data-i18n="hero.track3">Infraestrutura de Redes</span>
+          </div>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              <span data-i18n="hero.ctaProjects">Explorar Projetos</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <span data-i18n="hero.ctaContact">Falar Comigo</span>
+            </a>
+            <div class="cv-dropdown">
+              <a href="assets/Curriculo_Edric_Carvalho.docx" download class="btn btn-ghost" id="hero-cv-pt" title="Baixar currículo em Português (.docx)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <span>CV PT</span>
+              </a>
+              <a href="assets/Resume_Edric_Carvalho_EN.docx" download class="btn btn-ghost" id="hero-cv-en" title="Download English Resume (.docx)">
+                <span>CV EN</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Engineer Spec Card (clean tech focal element) -->
+        <aside class="hero-card spotlight-card" aria-label="Resumo rápido de perfil">
+          <div class="terminal-bar">
+            <div class="terminal-dots" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="terminal-title">edric@workstation:~# status</span>
+            <span class="terminal-live">ONLINE</span>
+          </div>
+
+          <div class="profile-header">
+            <div class="avatar-frame" id="avatar-frame">
+              <img src="eu.jpg" alt="Edric da Silva de Carvalho" id="profile-img" loading="eager">
+              <div class="avatar-fallback" id="avatar-fallback" aria-hidden="true">
+                <span>EC</span>
+              </div>
+            </div>
+            <div class="profile-meta">
+              <h2>Edric da Silva de Carvalho</h2>
+              <p class="mono-sub" data-i18n="card.role">Engenharia da Computação · UniCEUB</p>
+              <p class="location-line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Guará II, Brasília – DF</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="spec-list">
+            <div class="spec-row">
+              <span class="spec-key" data-i18n="card.kTarget">Objetivo</span>
+              <span class="spec-val accent" data-i18n="card.vTarget">Vagas de Estágio</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key" data-i18n="card.kMode">Modalidade</span>
+              <span class="spec-val" data-i18n="card.vMode">Presencial · Híbrido · Remoto</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key" data-i18n="card.kShift">Disponibilidade</span>
+              <span class="spec-val" data-i18n="card.vShift">Qualquer período (M / T / N)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key" data-i18n="card.kCert">Certificação</span>
+              <span class="spec-val" data-i18n="card.vCert">CCNA — Cisco NetAcad (Em curso)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key" data-i18n="card.kLang">Idiomas</span>
+              <span class="spec-val" data-i18n="card.vLang">Português (Nativo) · Inglês (Avançado)</span>
+            </div>
+          </div>
+
+          <div class="card-socials">
+            <a href="https://github.com/EdricC4rv4lho" target="_blank" rel="noopener" class="social-chip" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/edric-carvalho-74305a1b6" target="_blank" rel="noopener" class="social-chip" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <button type="button" class="social-chip copy-trigger" data-copy="edricdecarvalho@gmail.com" aria-label="Copiar e-mail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span data-i18n="card.copyEmail">Copiar E-mail</span>
+            </button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ═══ Sobre & Disponibilidade ═══ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker" data-i18n="about.kicker">01 // Sobre Mim</span>
+          <h2 class="section-title" data-i18n="about.title">Engenharia prática com <span class="gradient-text">foco em resultado</span></h2>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-copy reveal">
+            <p data-i18n="about.p1">
+              Sou <strong>Edric da Silva de Carvalho</strong>, graduando em <strong>Engenharia da Computação</strong>
+              pelo UniCEUB (2023 – 2027), em Brasília – DF. Tenho perfil genuinamente <strong>mão na massa</strong>:
+              gosto de ir à raiz do problema, analisar causas, prototipar e entregar soluções limpas, confiáveis e eficientes.
+            </p>
+            <p data-i18n="about.p2">
+              Minha base une <strong>software, hardware, eletrônica e infraestrutura de redes</strong> — desde
+              programação em C, Java e Python até diagnóstico avançado de computadores, projetos com microcontroladores
+              (<strong>Raspberry Pi RP2040</strong>), roteamento com <strong>Load Balance Dual-WAN</strong> e preparação
+              para certificação <strong>CCNA</strong>.
+            </p>
+            <p data-i18n="about.p3">
+              Busco uma oportunidade de <strong>estágio</strong> onde eu possa vestir a camisa da empresa, evoluir em
+              ritmo acelerado e contribuir desde o primeiro dia com dedicação, organização e liderança colaborativa.
+            </p>
+          </div>
+
+          <div class="metrics-grid reveal">
+            <div class="metric-card spotlight-card">
+              <span class="metric-val" data-count="2027">2027</span>
+              <span class="metric-label" data-i18n="about.m1">Previsão de Formatura (UniCEUB)</span>
+            </div>
+            <div class="metric-card spotlight-card">
+              <span class="metric-val">3</span>
+              <span class="metric-label" data-i18n="about.m2">Frentes: Comp., Eletrônica &amp; Redes</span>
+            </div>
+            <div class="metric-card spotlight-card">
+              <span class="metric-val">EN</span>
+              <span class="metric-label" data-i18n="about.m3">Inglês Avançado (Leitura, Escrita e Fala)</span>
+            </div>
+            <div class="metric-card spotlight-card">
+              <span class="metric-val">100%</span>
+              <span class="metric-label" data-i18n="about.m4">Flexível: Presencial, Híbrido ou Remoto</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Diferenciais / Bento Highlights ═══ -->
+    <section class="section section-alt" id="highlights">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker" data-i18n="hi.kicker">02 // Diferenciais Profissionais</span>
+          <h2 class="section-title" data-i18n="hi.title">Como eu trabalho e <span class="gradient-text">gero valor</span></h2>
+        </div>
+
+        <div class="bento-grid">
+          <article class="bento-card bento-wide spotlight-card reveal">
+            <div class="bento-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 data-i18n="hi.c1Title">Alta Dedicação &amp; Senso de Dono</h3>
+            <p data-i18n="hi.c1Desc">
+              Trabalho duro e visto a camisa da empresa. Encaro cada tarefa como um compromisso pessoal de qualidade,
+              assumindo responsabilidade do diagnóstico inicial até a entrega final validada.
+            </p>
+            <span class="bento-tag" data-i18n="hi.c1Tag">Comprometimento &amp; Ownership</span>
+          </article>
+
+          <article class="bento-card spotlight-card reveal">
+            <div class="bento-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3 data-i18n="hi.c2Title">Aprendizado Acelerado</h3>
+            <p data-i18n="hi.c2Desc">
+              Curva de aprendizado rápida para absorver novas stacks, equipamentos e protocolos — comprovada transitando
+              entre C, Java, Python, Linux, CCNA, RP2040 e IA local.
+            </p>
+            <span class="bento-tag" data-i18n="hi.c2Tag">Fast Learner</span>
+          </article>
+
+          <article class="bento-card spotlight-card reveal">
+            <div class="bento-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 data-i18n="hi.c3Title">Liderança Técnica</h3>
+            <p data-i18n="hi.c3Desc">
+              Experiência prática liderando equipe na construção do robô <strong>762 Raptor</strong> e atuando como
+              monitor de programação, alinhando pessoas e destravando problemas técnicos.
+            </p>
+            <span class="bento-tag" data-i18n="hi.c3Tag">Team Leadership</span>
+          </article>
+
+          <article class="bento-card bento-wide spotlight-card reveal">
+            <div class="bento-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 data-i18n="hi.c4Title">Gestão de Tempo &amp; Entrega Exemplar</h3>
+            <p data-i18n="hi.c4Desc">
+              Organização sistemática de prioridades e cronogramas. Consigo equilibrar graduação, preparação CCNA,
+              projetos pessoais e atendimento a clientes mantendo rigor técnico e entregas pontuais.
+            </p>
+            <span class="bento-tag" data-i18n="hi.c4Tag">Disciplina &amp; Excelência</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Competências Técnicas (Interativo com Filtros) ═══ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header-row reveal">
+          <div>
+            <span class="section-kicker" data-i18n="skills.kicker">03 // Stack &amp; Competências</span>
+            <h2 class="section-title" data-i18n="skills.title">Arsenal <span class="gradient-text">técnico</span></h2>
+          </div>
+
+          <div class="filter-bar" role="tablist" aria-label="Filtrar competências" data-filter-group="skills">
+            <button class="filter-btn active" type="button" data-filter="all" data-i18n="filter.all">Todos</button>
+            <button class="filter-btn" type="button" data-filter="network" data-i18n="filter.network">Redes &amp; Infra</button>
+            <button class="filter-btn" type="button" data-filter="hardware" data-i18n="filter.hardware">Eletrônica &amp; HW</button>
+            <button class="filter-btn" type="button" data-filter="software" data-i18n="filter.software">Software &amp; Dados</button>
+          </div>
+        </div>
+
+        <div class="skills-grid" id="skills-grid">
+          <article class="skill-card spotlight-card reveal" data-category="network">
+            <div class="skill-head">
+              <span class="skill-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              </span>
+              <div>
+                <h3 data-i18n="skills.netTitle">Redes &amp; Infraestrutura</h3>
+                <span class="skill-sub" data-i18n="skills.netSub">Foco CCNA &amp; Alta Disponibilidade</span>
+              </div>
+            </div>
+            <div class="chip-group">
+              <span class="chip chip-primary">CCNA (Em curso)</span>
+              <span class="chip chip-primary">Load Balance Dual-WAN</span>
+              <span class="chip">Roteamento &amp; Switching</span>
+              <span class="chip">Cisco Packet Tracer</span>
+              <span class="chip">TCP/IP · DNS · HTTP</span>
+              <span class="chip">Redes Locais (LAN)</span>
+            </div>
+          </article>
+
+          <article class="skill-card spotlight-card reveal" data-category="network">
+            <div class="skill-head">
+              <span class="skill-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+              </span>
+              <div>
+                <h3 data-i18n="skills.osTitle">Sistemas Operacionais &amp; DevOps</h3>
+                <span class="skill-sub" data-i18n="skills.osSub">Administração, Containers &amp; IA Local</span>
+              </div>
+            </div>
+            <div class="chip-group">
+              <span class="chip chip-primary">Linux (Ubuntu · Kali · WSL 2)</span>
+              <span class="chip">Windows 11</span>
+              <span class="chip chip-primary">Docker</span>
+              <span class="chip">Git &amp; GitHub</span>
+              <span class="chip">Ollama (LLMs Locais)</span>
+              <span class="chip">VS Code</span>
+            </div>
+          </article>
+
+          <article class="skill-card spotlight-card reveal" data-category="hardware">
+            <div class="skill-head">
+              <span class="skill-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+              </span>
+              <div>
+                <h3 data-i18n="skills.hwTitle">Hardware &amp; Eletrônica</h3>
+                <span class="skill-sub" data-i18n="skills.hwSub">Embarcados, Robótica &amp; Diagnóstico</span>
+              </div>
+            </div>
+            <div class="chip-group">
+              <span class="chip chip-primary">Raspberry Pi RP2040</span>
+              <span class="chip">Arduino &amp; Sensores</span>
+              <span class="chip">Eletrônica Básica</span>
+              <span class="chip chip-primary">Diagnóstico Avançado de PCs</span>
+              <span class="chip">Montagem &amp; Manutenção</span>
+              <span class="chip">Recuperação de Dados</span>
+              <span class="chip">Modelagem 3D</span>
+            </div>
+          </article>
+
+          <article class="skill-card spotlight-card reveal" data-category="software">
+            <div class="skill-head">
+              <span class="skill-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </span>
+              <div>
+                <h3 data-i18n="skills.devTitle">Programação, Dados &amp; APIs</h3>
+                <span class="skill-sub" data-i18n="skills.devSub">Desenvolvimento &amp; Ciência de Dados</span>
+              </div>
+            </div>
+            <div class="chip-group">
+              <span class="chip chip-primary">C</span>
+              <span class="chip chip-primary">Java</span>
+              <span class="chip chip-primary">Python</span>
+              <span class="chip">SQL (Bancos de Dados)</span>
+              <span class="chip">Consumo &amp; Integração de APIs</span>
+              <span class="chip">Kaggle</span>
+              <span class="chip">HTML / CSS / JS</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Projetos & Realizações (Destaque com Filtro) ═══ -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <div class="section-header-row reveal">
+          <div>
+            <span class="section-kicker" data-i18n="proj.kicker">04 // Projetos &amp; Prática</span>
+            <h2 class="section-title" data-i18n="proj.title">Soluções construídas <span class="gradient-text">na prática</span></h2>
+          </div>
+
+          <div class="filter-bar" role="tablist" aria-label="Filtrar projetos" data-filter-group="projects">
+            <button class="filter-btn active" type="button" data-filter="all" data-i18n="filter.all">Todos</button>
+            <button class="filter-btn" type="button" data-filter="hardware" data-i18n="filter.robotics">Robótica &amp; Eletrônica</button>
+            <button class="filter-btn" type="button" data-filter="network" data-i18n="filter.network">Redes &amp; Infra</button>
+            <button class="filter-btn" type="button" data-filter="software" data-i18n="filter.software">Software &amp; Dados</button>
+          </div>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- Project 1: 762 Raptor -->
+          <article class="project-card featured-project spotlight-card reveal" data-category="hardware">
+            <div class="project-top">
+              <span class="project-badge badge-cyan" data-i18n="proj.p1Badge">Liderança · Robótica</span>
+              <span class="project-year">2025</span>
+            </div>
+            <h3 data-i18n="proj.p1Title">Robô 762 Raptor — Batalha de Robôs UniCEUB</h3>
+            <p data-i18n="proj.p1Desc">
+              Liderei a equipe multidisciplinar da concepção à competição na disciplina de Robótica (Prof. Hudson Zaidan).
+              Coordenamos cronograma, delegação de tarefas, modelagem 3D, eletrônica, sensores e controle embarcado para
+              construir um robô competitivo de sumô sob prazo rigoroso.
+            </p>
+            <div class="project-tags">
+              <span>Liderança</span>
+              <span>Eletrônica</span>
+              <span>Arduino</span>
+              <span>Sensores</span>
+              <span>Modelagem 3D</span>
+              <span>C / C++</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/EdricC4rv4lho" target="_blank" rel="noopener" class="project-link">
+                <span data-i18n="proj.viewGh">Ver GitHub</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2: Dual-WAN -->
+          <article class="project-card featured-project spotlight-card reveal" data-category="network">
+            <div class="project-top">
+              <span class="project-badge badge-indigo" data-i18n="proj.p2Badge">Infraestrutura · Redes</span>
+              <span class="project-year" data-i18n="proj.ongoing">Contínuo</span>
+            </div>
+            <h3 data-i18n="proj.p2Title">Infraestrutura de Rede com Load Balance Dual-WAN</h3>
+            <p data-i18n="proj.p2Desc">
+              Projeto e implementação de infraestrutura de rede doméstica avançada com balanceamento de carga Dual-WAN,
+              garantindo redundância, failover automático e alta disponibilidade, alinhado aos estudos de roteamento
+              e switching para certificação CCNA.
+            </p>
+            <div class="project-tags">
+              <span>Dual-WAN</span>
+              <span>Load Balance</span>
+              <span>Roteamento</span>
+              <span>Cisco Packet Tracer</span>
+              <span>CCNA</span>
+            </div>
+            <div class="project-footer">
+              <span class="project-meta" data-i18n="proj.p2Meta">Alta Disponibilidade &amp; Redundância</span>
+            </div>
+          </article>
+
+          <!-- Project 3: RP2040 -->
+          <article class="project-card spotlight-card reveal" data-category="hardware">
+            <div class="project-top">
+              <span class="project-badge badge-cyan" data-i18n="proj.p3Badge">Eletrônica · Embarcados</span>
+              <span class="project-year" data-i18n="proj.ongoing">Contínuo</span>
+            </div>
+            <h3 data-i18n="proj.p3Title">Sistemas Embarcados com Raspberry Pi RP2040</h3>
+            <p data-i18n="proj.p3Desc">
+              Prototipagem e desenvolvimento de projetos práticos utilizando microcontroladores Raspberry Pi RP2040,
+              integrando circuitos de eletrônica básica, leitura de periféricos e firmware eficiente.
+            </p>
+            <div class="project-tags">
+              <span>RP2040</span>
+              <span>Microcontroladores</span>
+              <span>Eletrônica</span>
+              <span>C / Python</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/EdricC4rv4lho" target="_blank" rel="noopener" class="project-link">
+                <span data-i18n="proj.viewGh">Ver GitHub</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4: Local AI + Kaggle -->
+          <article class="project-card spotlight-card reveal" data-category="software">
+            <div class="project-top">
+              <span class="project-badge badge-emerald" data-i18n="proj.p4Badge">IA Local · Dados</span>
+              <span class="project-year" data-i18n="proj.ongoing">Contínuo</span>
+            </div>
+            <h3 data-i18n="proj.p4Title">Execução de IA Local (Ollama) &amp; Desafios Kaggle</h3>
+            <p data-i18n="proj.p4Desc">
+              Configuração, otimização e execução de modelos de linguagem locais via Ollama em ambiente Linux/WSL 2,
+              somada à participação em desafios práticos de ciência de dados no Kaggle utilizando Python e SQL.
+            </p>
+            <div class="project-tags">
+              <span>Ollama</span>
+              <span>Kaggle</span>
+              <span>Python</span>
+              <span>SQL</span>
+              <span>Docker</span>
+              <span>WSL 2</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/EdricC4rv4lho" target="_blank" rel="noopener" class="project-link">
+                <span data-i18n="proj.viewGh">Ver GitHub</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 5: Suporte Técnico -->
+          <article class="project-card spotlight-card reveal" data-category="network">
+            <div class="project-top">
+              <span class="project-badge badge-indigo" data-i18n="proj.p5Badge">Experiência · Autônomo</span>
+              <span class="project-year">2024 – Atual</span>
+            </div>
+            <h3 data-i18n="proj.p5Title">Suporte Técnico, Diagnóstico &amp; Recuperação de Dados</h3>
+            <p data-i18n="proj.p5Desc">
+              Atuação autônoma em montagem, manutenção preventiva/corretiva, diagnóstico avançado de hardware/software,
+              otimização de sistemas operacionais, recuperação de dados e configuração de redes para clientes finais.
+            </p>
+            <div class="project-tags">
+              <span>Hardware</span>
+              <span>Linux &amp; Windows</span>
+              <span>Recuperação de Dados</span>
+              <span>Atendimento</span>
+            </div>
+            <div class="project-footer">
+              <span class="project-meta" data-i18n="proj.p5Meta">Gestão de prazos &amp; qualidade ponta a ponta</span>
+            </div>
+          </article>
+
+          <!-- Project 6: Monitoria C -->
+          <article class="project-card spotlight-card reveal" data-category="software">
+            <div class="project-top">
+              <span class="project-badge badge-emerald" data-i18n="proj.p6Badge">Acadêmico · Mentoria</span>
+              <span class="project-year">2024</span>
+            </div>
+            <h3 data-i18n="proj.p6Title">Monitoria de Programação em Linguagem C</h3>
+            <p data-i18n="proj.p6Desc">
+              Apoio técnico e didático a colegas de engenharia na construção de lógica de programação, depuração de
+              código e resolução de problemas em C — fortalecendo comunicação clara e domínio algorítmico.
+            </p>
+            <div class="project-tags">
+              <span>C</span>
+              <span>Lógica</span>
+              <span>Depuração</span>
+              <span>Didática</span>
+            </div>
+            <div class="project-footer">
+              <span class="project-meta">UniCEUB · 2024</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Trajetória & Formação ═══ -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker" data-i18n="exp.kicker">05 // Trajetória &amp; Formação</span>
+          <h2 class="section-title" data-i18n="exp.title">Evolução acadêmica e <span class="gradient-text">certificações</span></h2>
+        </div>
+
+        <div class="timeline-layout">
+          <div class="timeline reveal">
+            <div class="timeline-item active">
+              <span class="timeline-date" data-i18n="exp.t1Date">2023 – Previsão: 2027</span>
+              <h3 data-i18n="exp.t1Title">Bacharelado em Engenharia da Computação</h3>
+              <p class="timeline-org">UniCEUB · Brasília – DF</p>
+              <p data-i18n="exp.t1Desc">Formação completa integrando arquitetura de computadores, eletrônica, redes, sistemas operacionais, engenharia de software e ciência de dados.</p>
+            </div>
+
+            <div class="timeline-item active">
+              <span class="timeline-date" data-i18n="exp.t2Date">Em andamento</span>
+              <h3 data-i18n="exp.t2Title">Preparatório para Certificação CCNA</h3>
+              <p class="timeline-org">ABRedes / Cisco NetAcad</p>
+              <p data-i18n="exp.t2Desc">Aprofundamento prático em roteamento, switching, protocolos de rede, segurança básica e laboratórios no Cisco Packet Tracer.</p>
+            </div>
+
+            <div class="timeline-item active">
+              <span class="timeline-date" data-i18n="exp.t3Date">2024 – Atual</span>
+              <h3 data-i18n="exp.t3Title">Técnico de Suporte e Manutenção de Computadores</h3>
+              <p class="timeline-org" data-i18n="exp.t3Org">Atuação Autônoma</p>
+              <p data-i18n="exp.t3Desc">Diagnóstico avançado, montagem, otimização de sistemas, recuperação de dados e configuração de redes locais com gestão direta de prazos.</p>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-date">2025</span>
+              <h3 data-i18n="exp.t4Title">Líder de Projeto de Robótica &amp; Java Avançado</h3>
+              <p class="timeline-org">UniCEUB · Cod3r</p>
+              <p data-i18n="exp.t4Desc">Liderança da equipe do robô 762 Raptor na Batalha de Robôs do UniCEUB e conclusão do curso Java (Do Básico ao Avançado) pela Cod3r.</p>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-date">2024</span>
+              <h3 data-i18n="exp.t5Title">Monitor de Programação em C</h3>
+              <p class="timeline-org">UniCEUB</p>
+              <p data-i18n="exp.t5Desc">Apoio individual e em grupo na compreensão de lógica de programação, resolução de algoritmos e depuração de código em C.</p>
+            </div>
+          </div>
+
+          <aside class="edu-sidebar reveal">
+            <div class="edu-box spotlight-card">
+              <h3 data-i18n="exp.focusTitle">Áreas de Interesse para Estágio</h3>
+              <ul class="check-list">
+                <li data-i18n="exp.f1">Engenharia da Computação &amp; Desenvolvimento</li>
+                <li data-i18n="exp.f2">Eletrônica, Hardware &amp; Sistemas Embarcados</li>
+                <li data-i18n="exp.f3">Infraestrutura de Redes, Suporte &amp; Operações (NOC)</li>
+                <li data-i18n="exp.f4">Sistemas Linux, Automação &amp; Dados</li>
+              </ul>
+            </div>
+
+            <div class="edu-box spotlight-card">
+              <h3 data-i18n="exp.docsTitle">Baixar Currículo (.docx)</h3>
+              <p class="edu-note" data-i18n="exp.docsNote">
+                Versões enxutas de 1 página, otimizadas para sistemas ATS e prontas para revisão rápida.
+              </p>
+              <div class="download-stack">
+                <a href="assets/Curriculo_Edric_Carvalho.docx" download class="btn btn-primary btn-full">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  <span data-i18n="exp.dlPt">Currículo em Português (.docx)</span>
+                </a>
+                <a href="assets/Resume_Edric_Carvalho_EN.docx" download class="btn btn-outline btn-full">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  <span data-i18n="exp.dlEn">English Resume (.docx)</span>
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Contato ═══ -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker" data-i18n="contact.kicker">06 // Contato</span>
+          <h2 class="section-title" data-i18n="contact.title">Pronto para <span class="gradient-text">somar ao seu time</span></h2>
+        </div>
+
+        <div class="availability-banner reveal">
+          <div class="avail-left">
+            <span class="status-dot" aria-hidden="true"></span>
+            <div>
+              <strong data-i18n="contact.bannerTitle">Disponível imediatamente para vagas de estágio</strong>
+              <p data-i18n="contact.bannerSub">Engenharia da Computação · Eletrônica · Infraestrutura de Redes — Presencial, Híbrido ou Remoto, em qualquer período.</p>
+            </div>
+          </div>
+          <a href="https://wa.me/5561993294950" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+            <span data-i18n="contact.waCta">Chamar no WhatsApp</span>
+          </a>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-cards reveal">
+            <div class="contact-card spotlight-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label">E-mail</span>
+                <a href="mailto:edricdecarvalho@gmail.com">edricdecarvalho@gmail.com</a>
+              </div>
+              <button type="button" class="copy-btn copy-trigger" data-copy="edricdecarvalho@gmail.com" aria-label="Copiar e-mail" title="Copiar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+
+            <div class="contact-card spotlight-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label" data-i18n="contact.phoneLabel">Telefone / WhatsApp</span>
+                <a href="https://wa.me/5561993294950" target="_blank" rel="noopener">+55 (61) 9 9329-4950</a>
+              </div>
+              <button type="button" class="copy-btn copy-trigger" data-copy="(61) 9 9329-4950" aria-label="Copiar telefone" title="Copiar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+
+            <a href="https://www.linkedin.com/in/edric-carvalho-74305a1b6" target="_blank" rel="noopener" class="contact-card spotlight-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">linkedin.com/in/edric-carvalho-74305a1b6</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/EdricC4rv4lho" target="_blank" rel="noopener" class="contact-card spotlight-card">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </div>
+              <div class="contact-info">
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">github.com/EdricC4rv4lho</span>
+              </div>
+            </a>
+          </div>
+
+          <form class="contact-form spotlight-card reveal" id="contact-form">
+            <h3 data-i18n="contact.formTitle">Envie uma mensagem direta</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" data-i18n="contact.fName">Seu nome</label>
+                <input type="text" id="name" name="name" placeholder="Ex: Ana Paula (Recrutamento)" data-i18n-placeholder="contact.pName" required>
+              </div>
+              <div class="form-group">
+                <label for="email" data-i18n="contact.fEmail">Seu e-mail</label>
+                <input type="email" id="email" name="email" placeholder="voce@empresa.com" data-i18n-placeholder="contact.pEmail" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject" data-i18n="contact.fSubject">Assunto</label>
+              <input type="text" id="subject" name="subject" placeholder="Oportunidade de Estágio / Projeto" data-i18n-placeholder="contact.pSubject" required>
+            </div>
+            <div class="form-group">
+              <label for="message" data-i18n="contact.fMsg">Mensagem</label>
+              <textarea id="message" name="message" rows="4" placeholder="Conte um pouco sobre a vaga, projeto ou desafio..." data-i18n-placeholder="contact.pMsg" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span data-i18n="contact.send">Enviar Mensagem</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>
+        <span data-i18n="footer.built">Desenvolvido por</span>
+        <strong class="gradient-text">Edric da Silva de Carvalho</strong> · Brasília, DF · <span id="current-year">2026</span>
+      </p>
+      <div class="footer-links">
+        <a href="https://github.com/EdricC4rv4lho" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/edric-carvalho-74305a1b6" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:edricdecarvalho@gmail.com">E-mail</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
